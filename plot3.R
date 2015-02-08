@@ -6,7 +6,7 @@ hpc$Time <- strptime(paste(hpc$Date, hpc$Time), "%d/%m/%Y %H:%M:%S")
 hpc$Date <- as.Date(hpc$Date, "%d/%m/%Y")
 hpc <- subset(hpc, Date == as.Date("2007-02-01") | Date == as.Date("2007-02-02"))
 
-png(file="plot3.png",width=480,height=480)
+png(file="plot3.png",width=480,height=480,type="cairo",bg="transparent")
 plot(hpc$Time, hpc$Sub_metering_1, type='l', xlab = NA, ylab = 'Energy sub metering')
 lines(hpc$Time, hpc$Sub_metering_2, col = 'red')
 lines(hpc$Time, hpc$Sub_metering_3, col = 'blue')

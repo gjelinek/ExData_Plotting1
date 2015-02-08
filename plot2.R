@@ -6,6 +6,6 @@ hpc$Time <- strptime(paste(hpc$Date, hpc$Time), "%d/%m/%Y %H:%M:%S")
 hpc$Date <- as.Date(hpc$Date, "%d/%m/%Y")
 hpc <- subset(hpc, Date == as.Date("2007-02-01") | Date == as.Date("2007-02-02"))
 
-png(file="plot2.png",width=480,height=480)
+png(file="plot2.png",width=480,height=480,type="cairo",bg="transparent")
 plot(hpc$Time, hpc$Global_active_power, type='l', xlab = NA, ylab = 'Global Active Power (kilowatts)')
 dev.off()
